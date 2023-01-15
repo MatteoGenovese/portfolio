@@ -9,7 +9,7 @@
                 </p>
 
                 <h2>
-                    This is a PORTFOLIO of a full stack developer
+                    This is a PORTFOLIO of a full stack web developer
                 </h2>
             </div>
 
@@ -30,16 +30,21 @@ export default {
 
 
 #jumbotron {
-    background-color: #0c0c0c;
-    // background-image: linear-gradient(to right,  #0F2027, #203A43, #2C5364);
-
-    // background-image: linear-gradient(to right,  #005AA7, #FFFDE4);
-
-    background-image: linear-gradient(to right,  #0F2027, #1CB5E0 );
+    background-size: cover;
+    background-position: center;
 
 
+    background-image:linear-gradient(
+                        to right bottom,
+                        rgba(#0F2027, 0.9),
+                        rgba(#1CB5E0, 0.9)),
+                        url(../../../assets/jumbotron.jpg);
+    width: 100%;
+    object-fit: cover;
 
-    height: calc(100vh - 56px);
+
+
+    height: calc(100vh - 5rem);
 
 
 

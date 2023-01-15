@@ -1,12 +1,12 @@
 <template>
     <div v-if="work.visible" class="wrapper" data-aos="fade-in">
-        <div class="single-card">
+        <div class="card">
 
-            <div class="front">
+            <div class="card__front">
                 <img :src="`./images/works/${work.imageName}`" alt="" class="img-fluid">
             </div>
 
-            <div class="back d-flex flex-column justify-content-between">
+            <div class="card__back d-flex flex-column justify-content-between">
                 <div class="content">
                     <h2>{{ work.title }}</h2>
                     <p>{{ work.description }}</p>
@@ -52,15 +52,92 @@ export default {
 </script>
 
 <style lang="scss" scoped >
+
+@import '../../../sass/portfolio/app.scss';
+
 .wrapper,
-.single-card {
-    height: 35rem;
-    margin: 2rem 0.5rem;
+.card {
+    height: 50rem;
+}
+
+.wrapper:hover .card {
+    transform: rotateY(180deg);
 }
 
 .wrapper {
-    perspective: 900px;
+    perspective: 90rem;
 }
+
+
+.card {
+    text-align: center;
+    transition: all 0.75s cubic-bezier(0.7, -.5, 0.3, 1.8);
+    transform-style: preserve-3d;
+    box-shadow: 2rem -2rem 2rem rgba(0, 0, 0, 0.255);
+    -moz-box-shadow: 1rem -1rem 0.5rem rgba(0, 0, 0, 0.255);
+    -webkit-box-shadow: 1rem -1rem 0.5rem rgba(0, 0, 0, 0.255);
+    -o-box-shadow: 1rem -1rem 0.5rem rgba(0, 0, 0, 0.255);
+    border-radius: 0.5rem;
+    position: relative;
+
+    &__front {
+        cursor: pointer;
+        backface-visibility: hidden;
+        background-size: contain;
+        background-position: center center;
+
+    }
+
+    &__back {
+        transform: rotateY(180deg);
+        position: absolute;
+        background-color: $primary_color_light;
+        padding: 4rem 4rem;
+
+        .content {
+            h2 {
+                font-size: 3.5rem;
+                margin-bottom: 2rem;
+                font-weight: 300;
+            }
+            p {
+                font-size: $default-font-size;
+                margin: 1rem 0;
+                font-weight: 300;
+                text-align: justify;
+                text-justify: inter-word;
+            }
+            h4 {
+            margin: 0;
+        }
+        }
+
+
+    }
+
+    &__front,
+    &__back {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        border-radius: 0.5rem;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+
+    }
+
+
+}
+
+
+
 
 .link {
     .tags {
@@ -68,77 +145,17 @@ export default {
     }
 }
 
-.single-card {
-    text-align: center;
-    transition: all 0.75s cubic-bezier(0.7, -.5, 0.3, 1.8);
-    transform-style: preserve-3d;
 
 
-    box-shadow: 20px -20px 20px rgba(0, 0, 0, 0.255);
-    -moz-box-shadow: 10px -10px 5px rgba(0, 0, 0, 0.255);
-    -webkit-box-shadow: 10px -10px 5px rgba(0, 0, 0, 0.255);
-    -o-box-shadow: 10px -10px 5px rgba(0, 0, 0, 0.255);
-    border-radius: 5px;
-}
 
-.wrapper:hover .single-card {
-    transform: rotateY(180deg);
-}
 
-.front,
-.back {
-    height: 100%;
+a.btn{
+    transition: all 0.2s ease-out;
+    font-size: $default-font-size;
 
-    background-color: aquamarine;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    border-radius: 5px;
-    top: 0;
-    left: 0;
-    backface-visibility: hidden;
-
-    img {
-        width: 100%;
-        object-fit: contain;
+    &:hover {
+        scale: 1.1;
+        transform: translateY(-0.3rem);
     }
-
-}
-
-.front {
-    cursor: pointer;
-    backface-visibility: hidden;
-    background-size: contain;
-    background-position: center center;
-
-}
-
-.back {
-    transform: rotateY(180deg);
-    position: absolute;
-    background-color: #eeeeee;
-    padding: 0.5rem;
-}
-
-.content {
-    padding-top: 5%;
-
-    h2 {
-        font-size: 35px;
-        margin: 0;
-        font-weight: 300;
-    }
-
-    p {
-        font-size: 1.1rem;
-        margin: 1rem 0;
-        font-weight: 300;
-    }
-}
-
-
-
-.content h4 {
-    margin: 0;
 }
 </style>

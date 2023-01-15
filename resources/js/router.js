@@ -1,9 +1,9 @@
 import Vue from 'vue';
-import { createRouter, createWebHistory } from 'vue-router';
+import VueRouter from 'vue-router';
 
 window.Vue = require('vue');
 
-Vue.use(createRouter);
+Vue.use(VueRouter);
 
 //importo le singole pagine
 import HomePortfolio from './pages/portfolio/HomePortfolio.vue';
@@ -18,9 +18,9 @@ import PropertyOverview from './pages/boolBnb/PropertyOverview.vue';
 //path
 //name
 //component
-const router = new createRouter({
+const router = new VueRouter({
 
-    history: createWebHistory(),
+    mode: 'history',
 
     routes: [
         //Portfolio

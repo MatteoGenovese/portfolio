@@ -389,14 +389,14 @@ export default {
     }
 
     .star{
-        left: calc(12.5% + 20px) ;
+        left: calc(12.5% + 2rem) ;
         display: inline-block;
-        padding: 10px;
+        padding: 1rem;
         background: rgb(184, 0, 0);
         clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 50% 63%, 100% 100%);
 
         svg{
-            transform: translateY(-7px);
+            transform: translateY(-0.7rem);
             color: white;
 
         }
@@ -407,9 +407,9 @@ export default {
         background-color: rgba($tertiaryLight,.1);
 
         li{
-            box-shadow: -2px 2px 11px -2px rgba(0,0,0,0.29);
-            -webkit-box-shadow: -2px 2px 11px -2px rgba(0,0,0,0.29);
-            -moz-box-shadow: -2px 2px 11px -2px rgba(0,0,0,0.29);
+            box-shadow: -0.2rem 0.2rem 1rem -0.2rem rgba(0,0,0,0.29);
+            -webkit-box-shadow: -0.2rem 0.2rem 1rem -0.2rem rgba(0,0,0,0.29);
+            -moz-box-shadow: -0.2rem 0.2rem 1rem -0.2rem rgba(0,0,0,0.29);
         }
     }
 
@@ -448,8 +448,8 @@ export default {
         img{
             display: block;
             margin: 0 auto;
-            @media screen and (max-width: 550px){
-                max-width: 300px;
+            @media screen and (max-width: 55rem){
+                max-width: 30rem;
             }
         }
     }
